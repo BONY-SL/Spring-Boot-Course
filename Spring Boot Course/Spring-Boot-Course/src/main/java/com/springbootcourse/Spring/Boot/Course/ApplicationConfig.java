@@ -11,19 +11,16 @@ public class ApplicationConfig {
 
 
     @Bean
-    @Qualifier("b1")
     public MyFirstClass myFirstBean(){
       return new MyFirstClass("  first Bean");
    }
 
     @Bean
-    @Qualifier("b2")
     public MyFirstClass mySecondBean(){
         return new MyFirstClass("  second Bean");
     }
 
     @Bean
-    @Qualifier("b3")
     public MyFirstClass myThirdBean(){
         return new MyFirstClass("  third Bean");
     }

@@ -7,13 +7,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class MyFirstService {
 
-    private final MyFirstClass myFirstClass;
+    @Autowired
+    @Qualifier("mySecondBean")
+    private  MyFirstClass myFirstClass;
 
-
-    //With out Using Qulifier Error
-    public MyFirstService(@Qualifier("b2") MyFirstClass myFirstClass) {
-        this.myFirstClass = myFirstClass;
-    }
 
     public String tellAStory(){
         return "The Dependency is saying : "+ myFirstClass.Hello();
