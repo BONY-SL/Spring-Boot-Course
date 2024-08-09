@@ -12,12 +12,20 @@ public class MyFirstService {
 
 
     @Autowired
-    public void injectDependencies(@Qualifier("mySecondBean") MyFirstClass myFirstClass){
+    public void setMyFirstClass(@Qualifier("mySecondBean") MyFirstClass myFirstClass) {
         this.myFirstClass = myFirstClass;
     }
+
+
+//    @Autowired
+//    public void injectDependencies(@Qualifier("mySecondBean") MyFirstClass myFirstClass){
+//        this.myFirstClass = myFirstClass;
+//    }
 
 
     public String tellAStory(){
         return "The Dependency is saying : "+ myFirstClass.Hello();
     }
+
+
 }
