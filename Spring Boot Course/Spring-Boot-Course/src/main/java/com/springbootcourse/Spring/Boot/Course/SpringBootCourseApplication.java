@@ -11,8 +11,8 @@ public class SpringBootCourseApplication {
 
 		var context= SpringApplication.run(SpringBootCourseApplication.class, args);
 
-		MyFirstService myFirstClass = context.getBean(MyFirstService.class);
-		System.out.println(myFirstClass.tellAStory());
+		MyFirstService myFirstService = context.getBean(MyFirstService.class);
+		System.out.println(myFirstService.tellAStory());
 
 	}
 }
