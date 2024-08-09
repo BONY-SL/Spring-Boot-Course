@@ -11,18 +11,20 @@ public class ApplicationConfig {
 
 
     @Bean
-    public MyFirstClass myFirstClass(){
+    @Qualifier("b1")
+    public MyFirstClass myFirstBean(){
       return new MyFirstClass("  first Bean");
    }
 
     @Bean
-    public MyFirstClass mySecondClass(){
+    @Qualifier("b2")
+    public MyFirstClass mySecondBean(){
         return new MyFirstClass("  second Bean");
     }
 
     @Bean
-    @Primary
-    public MyFirstClass myThirdClass(){
+    @Qualifier("b3")
+    public MyFirstClass myThirdBean(){
         return new MyFirstClass("  third Bean");
     }
 }
