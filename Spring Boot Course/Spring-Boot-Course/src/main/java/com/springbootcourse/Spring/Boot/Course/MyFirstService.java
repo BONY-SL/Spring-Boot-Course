@@ -10,6 +10,7 @@ public class MyFirstService {
     private final MyFirstClass myFirstClass;
 
 
+    //With out Using Qulifier Error
     public MyFirstService(@Qualifier("b2") MyFirstClass myFirstClass) {
         this.myFirstClass = myFirstClass;
     }
