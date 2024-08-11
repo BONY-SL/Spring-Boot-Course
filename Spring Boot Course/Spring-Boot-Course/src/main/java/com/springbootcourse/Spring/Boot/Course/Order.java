@@ -1,7 +1,12 @@
 package com.springbootcourse.Spring.Boot.Course;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Order {
 
+
+    // When use the @JsonProperty can customize json attribute name
+    //@JsonProperty("product-name")
     private String productName;
     private String customerName;
     private int quntity;
