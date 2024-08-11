@@ -1,9 +1,6 @@
 package com.springbootcourse.Spring.Boot.Course;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class FirstController {
@@ -19,5 +16,11 @@ public class FirstController {
     public String post(@RequestParam (value = "message") String message){
 
         return "Request accepted..." +message;
+    }
+
+    @PostMapping("/post-order")
+    public String postOrder(@RequestBody Order order){
+
+        return "Request accepted..." + order.toString();
     }
 }
