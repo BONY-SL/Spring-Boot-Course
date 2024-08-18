@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class FirstController {
+public class StudentController {
 
 
     private final StudentRepository studentRepository;
 
     @Autowired
-    public FirstController(StudentRepository studentRepository) {
+    public StudentController(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 
@@ -30,9 +30,36 @@ public class FirstController {
     }
 
     @PostMapping("/saveStudent")
-    public Student saveStudent(@RequestBody Student student){
+    public StudentResponseDto saveStudent(@RequestBody StudentDTO dto){
 
-        return studentRepository.save(student);
+        var savedStudent = studentRepository.save(convertStudentDtoToStudent(dto));
+
+        return convertStudentToStudentResponseDto(savedStudent);
+    }
+
+    private StudentResponseDto convertStudentToStudentResponseDto(Student student){
+
+        return new StudentResponseDto(
+                student.getFirstname(),
+                student.getLastname(),
+                student.getEmail()
+        );
+    }
+
+    private Student convertStudentDtoToStudent(StudentDTO studentDTO){
+
+        var student = new Student();
+
+        student.setFirstname(studentDTO.firstname());
+        student.setLastname(studentDTO.lastname());
+        student.setEmail(studentDTO.email());
+
+        var school = new School();
+        school.setId(studentDTO.schoolId());
+        student.setSchool(school);
+
+        return student;
+
     }
 
     @GetMapping("/getStudentByID/{studentId}")
