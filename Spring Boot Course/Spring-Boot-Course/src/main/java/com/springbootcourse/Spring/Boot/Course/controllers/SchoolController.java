@@ -1,5 +1,8 @@
-package com.springbootcourse.Spring.Boot.Course;
+package com.springbootcourse.Spring.Boot.Course.controllers;
 
+import com.springbootcourse.Spring.Boot.Course.dto.SchoolDto;
+import com.springbootcourse.Spring.Boot.Course.repositories.SchoolRepository;
+import com.springbootcourse.Spring.Boot.Course.models.School;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,4 +1,4 @@
-package com.springbootcourse.Spring.Boot.Course;
+package com.springbootcourse.Spring.Boot.Course.models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;

@@ -1,5 +1,6 @@
-package com.springbootcourse.Spring.Boot.Course;
+package com.springbootcourse.Spring.Boot.Course.models;
 
+import com.springbootcourse.Spring.Boot.Course.models.Student;
 import jakarta.persistence.*;
 
 @Entity(name = "StudentProfile")
